@@ -1,4 +1,12 @@
 {%extends "layout.html" %}
 {% block body %}
-<p>{{ all_links }}</p>
+    {% if logged_in %}
+        <a href="profile/{{username}}">
+            <button>
+                profile
+
+            </button>
+        </a>
+    {% endif %}
+    <p>home</p>
 {% endblock %}

@@ -1,0 +1,18 @@
+{%extends "layout.html" %}
+{% block body %}
+    <div class="container">
+        <h1>Login</h1>
+        <form action="/login" method="POST">
+            <h4> username: <input type="text" name="username"></h4>
+            <h4> password: <input type="text" name="password"></h4>
+            <button type="submit">login</button>
+        </form>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <h4> {{message}} </h4>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    </div>
+{% endblock %}
