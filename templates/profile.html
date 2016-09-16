@@ -3,19 +3,12 @@
 <h4> logged in as {{username}}</h4>
 <div class="container">
     <h1>Profile</h1>
+    <h4>add a link</h4>
     <form action="/profile/{{username}}" method="post">
       <input type="text" name="link">
-      <input type="text" name="description">
+      <textarea type="text" name="description"></textarea>
       <button type="submit">add link</button>
     </form>
-    <h2>your links</h2>
-    {% for links in user_links %}
-    <div>
-        <p></p><a href="{{links}}"></a></p>
-        <h4>panda</h4>
-        <button id="removelink">Delete</button>
-    </div>
-    {% endfor %}
     {% with messages = get_flashed_messages() %}
         {% if messages %}
             {% for messages in messages %}
@@ -23,5 +16,14 @@
             {% endfor %}
         {% endif %}
     {% endwith %}
+    <h2>your links</h2>
+    <ul>
+    {% for link in links %}
+        <div id="link" class="jumbotron">
+            <a href="{{link.link}}" ><h4>{{link.link}}</h4></a>
+            <p>{{link.description}}</p>
+        </div>
+        {% endfor %}
+    </ul>
 </div>
 {% endblock %}

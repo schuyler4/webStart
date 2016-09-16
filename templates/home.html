@@ -2,11 +2,13 @@
 {% block body %}
     {% if logged_in %}
         <a href="profile/{{username}}">
-            <button>
-                profile
-
-            </button>
+            profile
         </a>
     {% endif %}
+    <ul>
+        {% for link in all_links %}
+            <li> {{link.owner}} </li>
+        {% endfor %}
+    </ul>
     <p>home</p>
 {% endblock %}

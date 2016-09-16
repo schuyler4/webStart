@@ -4,7 +4,8 @@
         <h1>Signup</h1>
         <form action="/signup" method="POST">
             <h4> username: <input type="text" name="username"></h4>
-            <h4> password: </h4><input type="text" name="password"></h4>
+            <h4> password: <input type="password" name="password"></h4>
+            <h4> retype password: <input type="password" name="retype_password"></h4>
             <button type="submit">sign up</button>
         </form>
         {% with messages = get_flashed_messages() %}
